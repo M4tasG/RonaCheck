@@ -9,7 +9,6 @@ def get_ronastats():
     for stat in stats:
         title = stat.find('div', class_='title')
         value = stat.find('div', class_='value')
-        #stats_arr += f'{title.text}: {value.text.strip()}'
         stats_arr.append(f'{title.text}: {value.text.strip()}')
     return stats_arr
 
