@@ -1,4 +1,4 @@
-from ronacheck import get_ronastats, get_ronacases
+from ronacheck import get_ronastats
 from win10toast import ToastNotifier
 
 stats = get_ronastats()
