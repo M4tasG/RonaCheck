@@ -12,15 +12,18 @@ def get_ronastats():
         stats_arr.append(f'{title.text}: {value.text.strip()}')
     return stats_arr
 
+def parse_value(index):
+    return int(stats[index].find('div', class_="value").text.strip())
+
 def get_ronacases():
-    return int(stats[0].find('div', class_="value").text.strip())
+    return parse_value(0)
 
 def get_ronadeaths():
-    return int(stats[1].find('div', class_="value").text.strip())
+    return parse_value(1)
 
 def get_ronapositive():
     return float(stats[3].find('div', class_="value").text.strip().replace(',','.')[:-1])
 
 def get_ronavaccinated():
-    return int(stats[4].find('div', class_="value").text.strip())
+    return parse_value(4)
 
